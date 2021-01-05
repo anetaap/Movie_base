@@ -12,15 +12,12 @@ struct movies
       double rate;
 } film[70];
 
-int add()
+int create()
 {
     FILE *fp;
-    fp=fopen("movies.txt","a+");
-    int i;
-    char t,n;
-    fseek(fp,0,SEEK_END);
-    i=ftell(fp)/sizeof(film);
-    fseek(fp,0,SEEK_END);
+    fp=fopen("movies.txt","w+");
+    int i=0,rozmiar;
+    char n,t;
     do
     {
       printf("Podaj tytuł filmu:\n");
@@ -32,7 +29,7 @@ int add()
       film[i].ID=i+1;
       fwrite(&film[i],sizeof(film),1,fp);
       i++;
-      int rozmiar=i;
+      rozmiar=i;
       printf("\nCzy chcesz wpisac do bazy jeszcze jeden rekord? (t=tak)\n");
       scanf("%s", &t);
       }while (t=='t');
