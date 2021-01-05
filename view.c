@@ -34,11 +34,11 @@ int view()
         {
           printf("\nNumer filmu:%d",film[n].ID);
           printf("\nTytuł filmu:%s",film[n].title);
-          printf("\nOcena filmu:%f/10",film[n].rate);
+          printf("\nOcena filmu:%.1f/10",film[n].rate);
           printf("\nKomentarz do filmu:%s",film[n].review);
         }
       } 
-  printf("\n3-Home 4-End 5-Page Up 6-Page Down");
+  printf("\n1-Home 2-End 3-Page Up 4-Page Down 5-Powrót do menu\n");
  do{
     scanf("%s", &z);
     y=z;                                  
@@ -84,7 +84,7 @@ int view()
          default : printf("\nnie ma takiej opcji, wybierz jeszcze raz");
          break;
          }  
-         }while(y!=27&&y!=1&&y!=2&&y!=3&&y!=4&&y!=5&&y!=6);        
+         }while(y!=1&&y!=2&&y!=3&&y!=4&&y!=5);        
 }
   fclose(fp);
   return 0;
