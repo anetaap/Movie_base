@@ -9,7 +9,7 @@ struct movies
       int ID;
       char title[20];
       char review[50];
-      double rate;
+      float rate;
 } film[70];
 
 int add()
@@ -26,7 +26,7 @@ int add()
       printf("Podaj tytuł filmu:\n");
       scanf("%s", *&film[i].title);
       printf("\nJak ocenisz film w skali od 1 do 10?:\n");
-      scanf("%lf", &film[i].rate);
+      scanf("%f", &film[i].rate);
       printf("\nDodaj komentarz:\n");
       scanf("%s", *&film[i].review);
       film[i].ID=i+1;

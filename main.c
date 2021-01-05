@@ -22,7 +22,7 @@ int main()
          break;
          case '2' : add();
          break;
-         case '3' : //view();
+         case '3' : view();
          break;
          case '4' : exit(0);
          break;
