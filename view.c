@@ -38,53 +38,20 @@ int view()
           printf("\nKomentarz do filmu:%s",film[n].review);
         }
       } 
-  printf("\n1-Home 2-End 3-Page Up 4-Page Down 5-Powrót do menu\n");
+   printf("\n1-Koniec 2-Powrót do menu\n");
  do{
     scanf("%s", &z);
     y=z;                                  
     switch(y)
     {
-         case '1' :
-         fseek(fp,0,0);
-         d=0;
-         g=1;
+         case '1' : exit(0);
          break;
-         case '2' :
-         fseek(fp,-1*sizeof(film),2);
-         d=rozmiar-1;
-         g=rozmiar;
-         break;
-         case '3' : 
-         fseek(fp,(h+1)*sizeof(film),0);
-         if(g>rozmiar-2&&g<rozmiar)
-         {
-         d=rozmiar-1;
-         g=rozmiar;
-         }
-         else{
-         d++;
-         g++;
-         }
-         break;
-         case '4' : 
-         fseek(fp,-(h+1)*sizeof(film),2);
-         if(d<1)
-         {
-         d=0;
-         g=1;
-         }
-         else
-         {
-         d--;
-         g--;
-         }
-         break;
-         case '5' : main();
+         case '2' : main();
          break;
          default : printf("\nnie ma takiej opcji, wybierz jeszcze raz");
          break;
          }  
-         }while(y!=1&&y!=2&&y!=3&&y!=4&&y!=5);        
+         }while(y!=1&&y!=2);        
 }
   fclose(fp);
   return 0;
